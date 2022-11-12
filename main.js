@@ -44,3 +44,40 @@ const pizzas = [
   },
   
 ]
+
+// Testing
+// console.log(pizzas);
+
+
+// Actividad A
+const pizzaConIdImpar = pizzas.filter((pizza) =>{
+  return pizza.id % 2 !== 0;
+});
+
+pizzaConIdImpar.forEach((pizza) => {
+  console.log(`La pizza ${pizza.nombre} contiene el id: ${pizza.id} y es impar.`);
+});
+
+
+// Actividad B
+// const pizzaDeMenorValorQue = (precio) => {
+//   return pizzas.some((pizza) => {
+//     return pizza.precio < precio;
+//   })
+//     ? console.log(`Si hay pizzas menores a $${precio}! :)`)
+//     : console.log(`No hay pizzas menores a $${precio} :(`);
+// };
+
+const pizzaDeMenorValorQue = (precio) => {
+  const valor = pizzas.some((pizza) => {
+    return pizza.precio < precio;
+  });
+  if (valor) {
+  console.log(`Si hay pizzas menores a $${precio}! :)`)
+  } else {
+  console.log(`No hay pizzas menores a $${precio} :(`);
+  }
+};
+
+pizzaDeMenorValorQue(6000)
+// pizzaDeMenorValorQue(1000);
