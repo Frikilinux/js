@@ -59,7 +59,9 @@ pizzaConIdImpar.forEach((pizza) => {
 });
 
 
-// Actividad B
+// Actividad B 
+// Solución (Copyright Rodri)
+
 // const pizzaDeMenorValorQue = (precio) => {
 //   return pizzas.some((pizza) => {
 //     return pizza.precio < precio;
@@ -68,6 +70,7 @@ pizzaConIdImpar.forEach((pizza) => {
 //     : console.log(`No hay pizzas menores a $${precio} :(`);
 // };
 
+// Solución alternativa :)
 const pizzaDeMenorValorQue = (precio) => {
   const valor = pizzas.some((pizza) => {
     return pizza.precio < precio;
@@ -79,5 +82,4 @@ const pizzaDeMenorValorQue = (precio) => {
   }
 };
 
-pizzaDeMenorValorQue(6000)
-// pizzaDeMenorValorQue(1000);
+pizzaDeMenorValorQue(600)
