@@ -50,6 +50,10 @@ const pizzas = [
 
 
 // Actividad A
+console.log(`Actividad 'A'`);
+console.log(``);
+
+
 const pizzaConIdImpar = pizzas.filter((pizza) =>{
   return pizza.id % 2 !== 0;
 });
@@ -60,6 +64,10 @@ pizzaConIdImpar.forEach((pizza) => {
 
 
 // Actividad B 
+console.log(``);
+console.log(`Actividad 'B'`);
+console.log(``);
+
 // Solución (Copyright Rodri)
 
 // const pizzaDeMenorValorQue = (precio) => {
@@ -85,12 +93,18 @@ const pizzaDeMenorValorQue = (precio) => {
 pizzaDeMenorValorQue(600)
 
 // Actividad C
+console.log(``);
+console.log(`Actividad 'C'`);
+console.log(``);
 
 pizzasPrecios = pizzas.forEach((pizzas) => {
   return console.log(`La pizza ${pizzas.nombre} tiene un costo de $${pizzas.precio}`);
 });
 
 // Actividad D
+console.log(``);
+console.log(`Actividad 'D'`);
+console.log(``);
 
 // const ingredientesDePizza = pizzas.forEach((pizza) => {
 //   console.log(`La pizza ${pizza.nombre} está hecha con:`);
@@ -100,7 +114,7 @@ pizzasPrecios = pizzas.forEach((pizzas) => {
 // });
 
 const ingredientesParaPizza = pizzas.forEach((pizza) => {
-  const ingrediente = pizza.ingredientes.map((ingrediente, i) => (i + 1 + '- ' + ingrediente) ).join('; ');
+  const ingrediente = pizza.ingredientes.map((ingrediente, i) => (i + 1 + '-' + ingrediente) ).join('; ');
 
   console.log(`La pizza ${pizza.nombre} contiene los ingredientes ${ingrediente}`);
 });
