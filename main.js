@@ -99,10 +99,8 @@ pizzasPrecios = pizzas.forEach((pizzas) => {
 //   });
 // });
 
-
 const ingredientesParaPizza = pizzas.forEach((pizza) => {
-  const ingrediente = pizza.ingredientes.map((ingrediente, i) => (i + 1 + '- '+ingrediente) ).join('; ');
+  const ingrediente = pizza.ingredientes.map((ingrediente, i) => (i + 1 + '- ' + ingrediente) ).join('; ');
 
   console.log(`La pizza ${pizza.nombre} contiene los ingredientes ${ingrediente}`);
-
-})
+});
