@@ -90,9 +90,11 @@ pizzasPrecios = pizzas.forEach((pizzas) => {
   return console.log(`La pizza ${pizzas.nombre} tiene un costo de $${pizzas.precio}`);
 });
 
+// Actividad D
+
 const ingredientesDePizza = pizzas.forEach((pizza) => {
   console.log(`La pizza ${pizza.nombre} está hecha con:`);
   const ingredientesDePizzas = pizza.ingredientes.forEach((ingrediente) => {
-    console.log(`Ingrediente ${pizza.ingredientes.indexOf(ingrediente) +1} ${ingrediente}`);
+    console.log(`Ingrediente ${pizza.ingredientes.indexOf(ingrediente) + 1} ${ingrediente}`);
   });
 });
