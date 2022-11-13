@@ -92,9 +92,17 @@ pizzasPrecios = pizzas.forEach((pizzas) => {
 
 // Actividad D
 
-const ingredientesDePizza = pizzas.forEach((pizza) => {
-  console.log(`La pizza ${pizza.nombre} está hecha con:`);
-  const ingredientesDePizzas = pizza.ingredientes.forEach((ingrediente) => {
-    console.log(`Ingrediente ${pizza.ingredientes.indexOf(ingrediente) + 1} ${ingrediente}`);
-  });
-});
+// const ingredientesDePizza = pizzas.forEach((pizza) => {
+//   console.log(`La pizza ${pizza.nombre} está hecha con:`);
+//   const ingredientesDePizzas = pizza.ingredientes.forEach((ingrediente) => {
+//     console.log(`Ingrediente ${pizza.ingredientes.indexOf(ingrediente) + 1} ${ingrediente}`);
+//   });
+// });
+
+
+const ingredientesParaPizza = pizzas.forEach((pizza) => {
+  const ingrediente = pizza.ingredientes.map((ingrediente, i) => (i + 1 + '- '+ingrediente) ).join('; ');
+
+  console.log(`La pizza ${pizza.nombre} contiene los ingredientes ${ingrediente}`);
+
+})
