@@ -18,7 +18,7 @@ const pizzas = [
   {
     id: 3,
     nombre: 'Pepperoni',
-    ingredientes: [ 'Pepperoni', 'Mozzarella', 'Albahaca', 'Orégano'],
+    ingredientes: [ 'Pepperoni', 'Mozzarella', 'Albahaca', 'Orégano', 'Aeituna'],
     precio: 3200,
   },
   
@@ -32,7 +32,7 @@ const pizzas = [
   {
     id: 5,
     nombre: 'Hawainana',
-    ingredientes: ['Mozzarella', 'Ananá', 'Tomate', 'Jamón'],
+    ingredientes: ['Mozzarella', 'Ananá', 'Tomate', 'Jamón', 'Especias'],
     precio: 2800,
   },
   
@@ -45,18 +45,20 @@ const pizzas = [
   
 ]
 
+const separador = (actividad) => {
+  console.log('');
+  console.log(`Actividad '${actividad}'`);
+  console.log(`=============`);
+}
+
 // Testing
 // console.log(pizzas);
 
 
 // Actividad A
-console.log(`Actividad 'A'`);
-console.log(``);
+separador('A');
 
-
-const pizzaConIdImpar = pizzas.filter((pizza) =>{
-  return pizza.id % 2 !== 0;
-});
+const pizzaConIdImpar = pizzas.filter((pizza) =>pizza.id % 2 !== 0); // Tuki, Sugar Code
 
 pizzaConIdImpar.forEach((pizza) => {
   console.log(`La pizza ${pizza.nombre} contiene el id: ${pizza.id} y es impar.`);
@@ -64,9 +66,7 @@ pizzaConIdImpar.forEach((pizza) => {
 
 
 // Actividad B 
-console.log(``);
-console.log(`Actividad 'B'`);
-console.log(``);
+separador('B');
 
 // Solución (Copyright Rodri)
 
@@ -75,46 +75,40 @@ console.log(``);
 //     return pizza.precio < precio;
 //   })
 //     ? console.log(`Si hay pizzas menores a $${precio}! :)`)
-//     : console.log(`No hay pizzas menores a $${precio} :(`);
+//     : console.log(`No hay pizzas menores a $${precio} :(, Podes buscar por otro valor!!`);
 // };
 
 // Solución alternativa :)
 const pizzaDeMenorValorQue = (precio) => {
-  const valor = pizzas.some((pizza) => {
-    return pizza.precio < precio;
-  });
+  const valor = pizzas.some(pizza => pizza.precio < precio);
   if (valor) {
   console.log(`Si hay pizzas menores a $${precio}! :)`)
   } else {
-  console.log(`No hay pizzas menores a $${precio} :(`);
-  }
+  console.log(`No hay pizzas menores a $${precio} :(, Podes buscar por otro valor!!`);
+  };
 };
 
 pizzaDeMenorValorQue(600)
 
 // Actividad C
-console.log(``);
-console.log(`Actividad 'C'`);
-console.log(``);
+separador('C');
 
-pizzasPrecios = pizzas.forEach((pizzas) => {
-  return console.log(`La pizza ${pizzas.nombre} tiene un costo de $${pizzas.precio}`);
-});
+pizzasPrecios = pizzas.forEach((pizzas) => console.log(`La pizza ${pizzas.nombre} tiene un costo de $${pizzas.precio}`));
 
-// Actividad D
-console.log(``);
-console.log(`Actividad 'D'`);
-console.log(``);
+// Solución ctividad D
+separador('D');
 
 // const ingredientesDePizza = pizzas.forEach((pizza) => {
 //   console.log(`La pizza ${pizza.nombre} está hecha con:`);
 //   const ingredientesDePizzas = pizza.ingredientes.forEach((ingrediente) => {
-//     console.log(`Ingrediente ${pizza.ingredientes.indexOf(ingrediente) + 1} ${ingrediente}`);
+//     console.log(`Ingrediente ${pizza.ingredientes.indexOf(ingrediente) + 1} - ${ingrediente}`);
 //   });
+//   console.log('');
 // });
 
-const ingredientesParaPizza = pizzas.forEach((pizza) => {
-  const ingrediente = pizza.ingredientes.map((ingrediente, i) => (i + 1 + '-' + ingrediente) ).join('; ');
+const pizzaConIngrendientes = pizzas.forEach((pizza) => {
+  const ingredientesConcatenados = pizza.ingredientes.map((ingrediente, i) => (i + 1 + ') ' + ingrediente) ).join('; ');
 
-  console.log(`La pizza ${pizza.nombre} contiene los ingredientes: ${ingrediente}`);
+  console.log(`La pizza ${pizza.nombre} contiene ${Object.keys(pizza.ingredientes).length} ingredientes: ${ingredientesConcatenados}`);
+  console.log('');
 });
