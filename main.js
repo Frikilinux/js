@@ -47,8 +47,8 @@ const pizzas = [
 
 const separador = (actividad) => {
   console.log('');
-  console.log(`Actividad '${actividad}'`);
-  console.log(`=============`);
+  console.log(`Solución de la actividad '${actividad}'`);
+  console.log(`============================`);
 }
 
 // // Testing
@@ -95,7 +95,7 @@ separador('C');
 
 pizzasPrecios = pizzas.forEach((pizzas) => console.log(`La pizza ${pizzas.nombre} tiene un costo de $${pizzas.precio}`));
 
-// // Solución ctividad D
+// // Actividad D
 separador('D');
 
 // // Solución Alternativa
@@ -111,5 +111,5 @@ const pizzaConIngrendientes = pizzas.forEach((pizza) => {
   const ingredientesConcatenados = pizza.ingredientes.map((ingrediente, i) => (i + 1 + ') ' + ingrediente) ).join('; ');
 
   console.log(`La pizza ${pizza.nombre} contiene ${Object.keys(pizza.ingredientes).length} ingredientes: ${ingredientesConcatenados}`);
-  console.log('');
+  console.log(''); // salto de línea
 });
