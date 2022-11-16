@@ -58,7 +58,7 @@ const separador = (actividad) => {
 // // Actividad A
 separador('A');
 
-const pizzaConIdImpar = pizzas.filter((pizza) =>pizza.id % 2 !== 0); // Tuki, Sugar Code
+const pizzaConIdImpar = pizzas.filter( pizza => pizza.id % 2 !== 0 ); // Tuki, Sugar Code
 
 pizzaConIdImpar.forEach((pizza) => {
   console.log(`La pizza ${pizza.nombre} contiene el id: ${pizza.id} y es impar.`);
