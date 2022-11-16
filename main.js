@@ -58,7 +58,7 @@ const separador = (actividad) => {
 // // Actividad A
 separador('A');
 
-const pizzaConIdImpar = pizzas.filter( pizza => pizza.id % 2 !== 0 ); // Tuki, Sugar Code
+const pizzaConIdImpar = pizzas.filter( pizza => pizza.id % 2 !== 0 ); // Tuki, syntactic sugar.
 
 pizzaConIdImpar.forEach((pizza) => {
   console.log(`La pizza ${pizza.nombre} contiene el id: ${pizza.id} y es impar.`);
@@ -99,7 +99,6 @@ pizzasPrecios = pizzas.forEach((pizzas) => console.log(`La pizza ${pizzas.nombre
 separador('D');
 
 // // Solución Alternativa
-
 // const ingredientesDePizza = pizzas.forEach((pizza) => {
 //   console.log(`La pizza ${pizza.nombre} está hecha con:`);
 //   const ingredientesDePizzas = pizza.ingredientes.forEach((ingrediente) => {
