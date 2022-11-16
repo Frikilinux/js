@@ -78,7 +78,7 @@ separador('B');
 //     : console.log(`No hay pizzas menores a $${precio} :(, Podes buscar por otro valor!!`);
 // };
 
-// Solución alternativa :)
+// // Solución alternativa :)
 const pizzaDeMenorValorQue = (precio) => {
   const valor = pizzas.some(pizza => pizza.precio < precio);
   if (valor) {
@@ -90,13 +90,15 @@ const pizzaDeMenorValorQue = (precio) => {
 
 pizzaDeMenorValorQue(600)
 
-// Actividad C
+// // Actividad C
 separador('C');
 
 pizzasPrecios = pizzas.forEach((pizzas) => console.log(`La pizza ${pizzas.nombre} tiene un costo de $${pizzas.precio}`));
 
-// Solución ctividad D
+// // Solución ctividad D
 separador('D');
+
+// // Solución Alternativa
 
 // const ingredientesDePizza = pizzas.forEach((pizza) => {
 //   console.log(`La pizza ${pizza.nombre} está hecha con:`);
