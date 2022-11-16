@@ -45,7 +45,7 @@ const pizzas = [
   
 ]
 
-const separador = (actividad) => {
+separador = (actividad) => {
   console.log('');
   console.log(`Solución de la actividad '${actividad}'`);
   console.log(`============================`);
