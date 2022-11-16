@@ -1,4 +1,4 @@
-// Array de objetos
+// // Array de objetos
 
 const pizzas = [
   {
@@ -51,11 +51,11 @@ const separador = (actividad) => {
   console.log(`=============`);
 }
 
-// Testing
-// console.log(pizzas);
+// // Testing
+// // console.log(pizzas);
 
 
-// Actividad A
+// // Actividad A
 separador('A');
 
 const pizzaConIdImpar = pizzas.filter((pizza) =>pizza.id % 2 !== 0); // Tuki, Sugar Code
@@ -65,10 +65,10 @@ pizzaConIdImpar.forEach((pizza) => {
 });
 
 
-// Actividad B 
+// // Actividad B 
 separador('B');
 
-// Solución (Copyright Rodri)
+// // Solución (Copyright Rodri)
 
 // const pizzaDeMenorValorQue = (precio) => {
 //   return pizzas.some((pizza) => {
