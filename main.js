@@ -51,22 +51,22 @@ separador = (actividad) => {
   console.log(`============================`);
 }
 
-// // Testing
-// // console.log(pizzas);
+// // // Testing
+// // // console.log(pizzas);
 
 
-// // Actividad A
-separador('A');
+// // // Actividad A
+// separador('A');
 
-const pizzaConIdImpar = pizzas.filter( pizza => pizza.id % 2 !== 0 ); // Tuki, syntactic sugar.
+// const pizzaConIdImpar = pizzas.filter( pizza => pizza.id % 2 !== 0 ); // Tuki, syntactic sugar.
 
-pizzaConIdImpar.forEach((pizza) => {
-  console.log(`La pizza ${pizza.nombre} contiene el id: ${pizza.id} y es impar.`);
-});
+// pizzaConIdImpar.forEach((pizza) => {
+//   console.log(`La pizza ${pizza.nombre} contiene el id: ${pizza.id} y es impar.`);
+// });
 
 
-// // Actividad B 
-separador('B');
+// // // Actividad B 
+// separador('B');
 
 // // Solución (Copyright Rodri)
 
@@ -78,25 +78,25 @@ separador('B');
 //     : console.log(`No hay pizzas menores a $${precio} :(, Podes buscar por otro valor!!`);
 // };
 
-// // Solución alternativa :)
-const pizzaDeMenorValorQue = (precio) => {
-  const valor = pizzas.some(pizza => pizza.precio < precio);
-  if (valor) {
-  console.log(`Si hay pizzas menores a $${precio}! :)`)
-  } else {
-  console.log(`No hay pizzas menores a $${precio} :(, Podes buscar por otro valor!!`);
-  };
-};
+// // // Solución alternativa :)
+// const pizzaDeMenorValorQue = (precio) => {
+//   const valor = pizzas.some(pizza => pizza.precio < precio);
+//   if (valor) {
+//   console.log(`Si hay pizzas menores a $${precio}! :)`)
+//   } else {
+//   console.log(`No hay pizzas menores a $${precio} :(, Podes buscar por otro valor!!`);
+//   };
+// };
 
-pizzaDeMenorValorQue(600)
+// pizzaDeMenorValorQue(600)
 
-// // Actividad C
-separador('C');
+// // // Actividad C
+// separador('C');
 
-pizzasPrecios = pizzas.forEach((pizzas) => console.log(`La pizza ${pizzas.nombre} tiene un costo de $${pizzas.precio}`));
+// pizzasPrecios = pizzas.forEach((pizzas) => console.log(`La pizza ${pizzas.nombre} tiene un costo de $${pizzas.precio}`));
 
-// // Actividad D
-separador('D');
+// // // Actividad D
+// separador('D');
 
 // // Solución Alternativa
 // const ingredientesDePizza = pizzas.forEach((pizza) => {
@@ -107,9 +107,42 @@ separador('D');
 //   console.log('');
 // });
 
-const pizzaConIngrendientes = pizzas.forEach((pizza) => {
-  const ingredientesConcatenados = pizza.ingredientes.map((ingrediente, i) => (i + 1 + ') ' + ingrediente) ).join('; ');
+// const pizzaConIngrendientes = pizzas.forEach((pizza) => {
+//   const ingredientesConcatenados = pizza.ingredientes.map((ingrediente, i) => (i + 1 + ') ' + ingrediente) ).join('; ');
 
-  console.log(`La pizza ${pizza.nombre} contiene ${Object.keys(pizza.ingredientes).length} ingredientes: ${ingredientesConcatenados}`);
-  console.log(''); // salto de línea
-});
+//   console.log(`La pizza ${pizza.nombre} contiene ${Object.keys(pizza.ingredientes).length} ingredientes: ${ingredientesConcatenados}`);
+//   console.log(''); // salto de línea
+// });
+
+let container = document.querySelector('.pizzas')
+let button = document.querySelector('.btn')
+
+
+const render = (nombre, precio) => {
+  return container.innerHTML = `<h2>${nombre}</h2><h3>${precio}</h3>`
+}
+
+const renderError = (error) => {
+  return error === 'notfound'
+    ? container.innerHTML = `<h2>No se encontró el ID</h2>`
+    : error === 'notNumber'
+      ? container.innerHTML = `<h2>No es un número</h2>`
+      : container.innerHTML = `<h2>Error desconocido</h2>`
+}
+
+// const searchPizza = (lista, id) => {
+//   lista.forEach( (pizza) => {
+//     return  pizza.id === id
+//       ? render(pizza.nombre, pizza.precio)
+//       : 
+//   });
+// };
+
+
+console.log(container);
+
+// searchPizza(pizzas, 4)
+
+renderError('dfrrr')
+
+// render('Calabreza', '$ 500')
