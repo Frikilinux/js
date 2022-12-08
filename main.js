@@ -45,11 +45,11 @@ const pizzas = [
   
 ]
 
-separador = (actividad) => {
-  console.log('');
-  console.log(`Solución de la actividad '${actividad}'`);
-  console.log(`============================`);
-}
+// separador = (actividad) => {
+//   console.log('');
+//   console.log(`Solución de la actividad '${actividad}'`);
+//   console.log(`============================`);
+// }
 
 // // // Testing
 // // // console.log(pizzas);
@@ -116,11 +116,21 @@ separador = (actividad) => {
 
 let container = document.querySelector('.pizzas')
 let button = document.querySelector('.btn')
+let input = document.querySelector('#search')
 
+const pizzaEncontrada = (array, id) => {
+  return array.filter((pizza) => {
+   return pizza.id === parseInt(id)
+  });
+};
 
-const render = (nombre, precio) => {
-  return container.innerHTML = `<h2>${nombre}</h2><h3>${precio}</h3>`
+// console.log(pizzaEncontrada(pizzas, 4))
+
+const render = (pizza) => {
+  return container.innerHTML = `<h2>Pizza ${pizza[0].nombre}</h2>\n<h3>$ ${pizza[0].precio}</h3>`
 }
+
+// console.log(render(pizzaEncontrada(pizzas, 4)));
 
 const renderError = (error) => {
   return error === 'notfound'
@@ -129,6 +139,8 @@ const renderError = (error) => {
       ? container.innerHTML = `<h2>No es un número</h2>`
       : container.innerHTML = `<h2>Error desconocido</h2>`
 }
+
+
 
 // const searchPizza = (lista, id) => {
 //   lista.forEach( (pizza) => {
@@ -142,6 +154,15 @@ const renderError = (error) => {
 console.log(container);
 
 // searchPizza(pizzas, 4)
+
+button.addEventListener('click', () => {
+  console.log(input.value);
+  const pizza = pizzaEncontrada(pizzas, input.value);
+  input.value === ''
+    ? renderError('notNumber')
+    : render(pizza)
+      
+});
 
 renderError('dfrrr')
 
