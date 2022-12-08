@@ -137,7 +137,7 @@ const renderError = (error) => {
     ? container.innerHTML = `<h2>No se encontró el ID</h2>`
     : error === 'notNumber'
       ? container.innerHTML = `<h2>No es un número</h2>`
-      : container.innerHTML = `<h2>Error desconocido</h2>`
+      : container.innerHTML = ''
 }
 
 
@@ -156,14 +156,17 @@ console.log(container);
 // searchPizza(pizzas, 4)
 
 button.addEventListener('click', () => {
-  console.log(input.value);
+  // console.log(input.value);
   const pizza = pizzaEncontrada(pizzas, input.value);
+  // console.log(pizza.length === 0);
   input.value === ''
     ? renderError('notNumber')
-    : render(pizza)
+    : pizza.length === 0
+      ? renderError('notfound')
+      : render(pizza)
       
 });
 
-renderError('dfrrr')
+// renderError('dfrrr')
 
 // render('Calabreza', '$ 500')
