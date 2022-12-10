@@ -23,7 +23,7 @@
   min-height: 100vh;
 }
 
-.container {
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,7 +57,7 @@ input[type=number]::-webkit-inner-spin-button {
   background-color: rgb(32, 33, 40);
 }
 
-.pizzas {
+.msg-container {
   min-height: 120px;
 }
 
@@ -81,18 +81,20 @@ input[type=number]::-webkit-inner-spin-button {
 h1 {
   font-size: 2.5rem;
   color: rgb(32, 221, 15);
-  font-weight: 900;
+  font-weight: 800;
   text-align: center;
 }
 
 h2,
 h3 {
   color: rgb(74, 105, 230);
-  font-size: 1.8rem;
+  font-size: 2.5rem;
+  font-weight: 600;
   text-align: center;
   padding: 10px 20px;
 }
 
 h3 {
+  font-weight: 800;
   color: rgb(231, 173, 15);
 }

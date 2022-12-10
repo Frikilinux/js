@@ -51,51 +51,48 @@ const pizzas = [
 },
 ];
 
-let container = document.querySelector('.pizzas')
+let messageContainer = document.querySelector('.msg-container')
 let formInput = document.querySelector('#search')
-let form = document.querySelector('.container');
+let form = document.querySelector('.form');
 
 const searchPizza = (array, id) => {
-  return array.filter((pizza) => pizza.id === parseInt(id));
+  return array.filter((pizza) => pizza.id == id);
 };
 
 const checkAvailId = (value) => value >= 1 && value <= pizzas.length;
 
-const render = (pizza) => {
+const renderPizza = (pizza, input) => {
   formInput.parentElement.style.backgroundColor = 'rgb(28, 69, 21)';
-  container.innerHTML = `<h2>Pizza ${pizza[0].nombre}</h2>
+  messageContainer.innerHTML = `<h2>Pizza ${pizza[0].nombre}</h2>
       <h3><i class="fas fa-dollar-sign fa-flip"></i> ${pizza[0].precio}</h3>`;
+  formInput.setAttribute('placeholder', `${input}`),
+  form.reset()
 };
 
-const setError = () => {
+const renderError = (msg) => {
+  messageContainer.innerHTML = msg
   formInput.parentElement.style.backgroundColor = 'rgb(80, 23, 23)';
-  container.querySelector('h2').style.color = 'red';
+  messageContainer.querySelector('h2').style.color = 'red';
   formInput.setAttribute('placeholder', `#ID`)
   form.reset();
 };
 
-const renderError = (error) => {
+const error = (error) => {
   switch (error) {
   case 'notfound':
-    container.innerHTML = `<h2>No se encontró el ID, prueba con uno entre 1
-        y ${pizzas.length}</h2>`;
-    setError();
+    renderError(`<h2>No se encontró el ID, prueba con uno
+        entre 1 y ${pizzas.length}</h2>`);
     break;
   case 'notNumber':
-    container.innerHTML = `<h2>Ingresa un número, please</h2>`;
-    setError();
+    renderError(`<h2>Ingresa un número, please</h2>`);
     break;
-  }
-}
+  };
+};
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   let input = formInput.value;
-  input === ''
-    ? renderError('notNumber')
-    : !checkAvailId(input)
-      ? renderError('notfound')
-      : (render(searchPizza(pizzas, input)),
-        formInput.setAttribute('placeholder', `${input}`),
-        form.reset())
+  input === '' ? error('notNumber')
+    : !checkAvailId(input) ? error('notfound')
+      : renderPizza(searchPizza(pizzas, input), input)
 });
