@@ -115,8 +115,8 @@ const pizzas = [
 // });
 
 let container = document.querySelector('.pizzas')
-let button = document.querySelector('.btn')
-let input = document.querySelector('#search')
+let inputForm = document.querySelector('#search')
+let form = document.querySelector('.container');
 
 const pizzaEncontrada = (array, id) => {
   return array.filter((pizza) => {
@@ -124,10 +124,12 @@ const pizzaEncontrada = (array, id) => {
   });
 };
 
+const checkAvailId = (value) => value >= 1 && value <= pizzas.length;
+
 // console.log(pizzaEncontrada(pizzas, 4))
 
 const render = (pizza) => {
-  return container.innerHTML = `<h2>Pizza ${pizza[0].nombre}</h2>\n<h3>$ ${pizza[0].precio}</h3>`
+  container.innerHTML = `<h2>Pizza ${pizza[0].nombre}</h2>\n<h3>$ ${pizza[0].precio}</h3>`
 }
 
 // console.log(render(pizzaEncontrada(pizzas, 4)));
@@ -155,15 +157,18 @@ console.log(container);
 
 // searchPizza(pizzas, 4)
 
-button.addEventListener('click', () => {
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
   // console.log(input.value);
-  const pizza = pizzaEncontrada(pizzas, input.value);
+  
   // console.log(pizza.length === 0);
-  input.value === ''
+  let input = inputForm.value;
+
+  input === ''
     ? renderError('notNumber')
-    : pizza.length === 0
+    : !checkAvailId(input)
       ? renderError('notfound')
-      : render(pizza)
+      : render(pizzaEncontrada(pizzas, input))
       
 });
 
