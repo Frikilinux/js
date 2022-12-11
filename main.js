@@ -62,7 +62,7 @@ const searchPizza = (array, id) => {
 const checkAvailId = (value) => value >= 1 && value <= pizzas.length;
 
 const renderPizza = (pizza, input) => {
-  formInput.parentElement.style.backgroundColor = 'rgb(28, 69, 21)';
+  formInput.parentElement.style.backgroundColor = 'var(--good-dim)';
   messageContainer.innerHTML = `<h2 class="fa-beat">Pizza ${pizza.nombre}
       </h2> <h3 class="fa-beat">$ ${pizza.precio}</i></h3>`;
   formInput.setAttribute('placeholder', `${input}`);
@@ -71,7 +71,7 @@ const renderPizza = (pizza, input) => {
 
 const renderError = (msg) => {
   messageContainer.innerHTML = msg
-  formInput.parentElement.style.backgroundColor = 'rgb(80, 23, 23)';
+  formInput.parentElement.style.backgroundColor = 'var(--atention-dim)';
   messageContainer.querySelector('h2').classList.add('error');
   formInput.setAttribute('placeholder', `#ID`);
   form.reset();

@@ -2,11 +2,16 @@
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap);
 
 :root {
-  --atention-color: rgb(183, 37, 37);
-  --fg-color: white;
-  --bg-color: rgb(14, 20, 2);
-  --bg2-color: rgb(32, 33, 40);
-  --atention-dim: rgb(80, 23, 23);
+  --atention: #fe1a27;
+  --fg: #F3F3F3;
+  --fg2: #9599a2;
+  --bg: #050e15;
+  --bg2: #314151;
+  --atention-dim: #d9105366;
+  --blue: #579fec;
+  --name: #30df62;
+  --good-dim: #1183415d;
+  --price: #b6ec21;
 }
 
 * {
@@ -21,7 +26,7 @@
 .main {
   position: relative;
   font-family: 'Montserrat';
-  background-color: var(--bg-color);
+  background-color: var(--bg);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,22 +34,6 @@
   gap: 50px;
   min-height: calc(100vh - 40px);
   overflow: hidden;
-}
-
-.fa-magnifying-glass-dollar {
-  --fa-animation-duration: 8s;
-  position: absolute;
-  opacity: 0.5;
-  font-size: 50rem;
-  /* z-index: 0; */
-  color: var(--bg2-color);
-}
-
-.fa-shake {
-  font-family: 'Montserrat';
-  --fa-animation-duration: 3s;
-  --fa-animation-iteration-count: 1;
-  --fa-animation-delay: 0.5s
 }
 
 .form {
@@ -57,16 +46,6 @@
   z-index: 2;
 }
 
-.input {
-  width: 80%;
-  text-align: center;
-  font-size: 1.5rem;
-  font-family: 'Montserrat';
-  font-weight: 600;
-  color: var(--fg-color);
-  background-color: transparent;
-}
-
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
@@ -75,27 +54,36 @@ input[type=number]::-webkit-inner-spin-button {
   transition: all 0.5s;
   display: flex;
   align-items: center;
-  flex-direction: column;
-  width: 90px;
-  padding: 15px; 
-  border-radius: 10px;
-  background-color: var(--bg2-color);
+  justify-content: space-between;
+  width: 200px;
+  padding: 8px; 
+  border-radius: 50px;
+  background-color: var(--bg2);
 }
 
-.msg-container {
-  min-height: 190px;
+.input {
+  width: 75%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  color: var(--fg);
+  background-color: transparent;
 }
 
 .btn {
+  /* right: 0; */
+  /* position: absolute; */
   transition: all 0.5s;
   font-family: 'Montserrat';
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  color: var(--fg-color);
-  padding: 5px 20px;
-  border-radius: 5px;
-  background-color: var(--atention-color);
+  color: var(--bg);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--blue);
 }
 
 .btn:hover {
@@ -103,33 +91,49 @@ input[type=number]::-webkit-inner-spin-button {
   transform: scale(1.07);
 }
 
+.msg-container {
+  position: relative;
+  min-height: 190px;
+}
+
+.back {
+  min-width: 410px;
+  position: absolute;
+  font-size: 180px;
+  bottom: calc(40% - 160px);
+  color: var(--bg2);
+  opacity: 0.1;
+}
+
+
+
 h1 {
   padding: 0 25px;
   font-size: 2.5rem;
-  color: rgb(32, 221, 15);
+  color: var(--blue);
   font-weight: 800;
   text-align: center;
 }
 
+h2,
+h3 {
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 10px 30px;
+}
+
 h2 {
+  font-weight: 600;
+  color: var(--name);
   --fa-beat-scale: 1.4;
   --fa-animation-duration: 1s;
   --fa-animation-iteration-count: 1;
   --fa-animation-timing: ease-in-out;
 }
 
-h2,
-h3 {
-  color: rgb(74, 105, 230);
-  font-size: 2.5rem;
-  font-weight: 600;
-  text-align: center;
-  padding: 10px 30px;
-}
-
 h3 {
   font-weight: 800;
-  color: rgb(231, 173, 15);
+  color: var(--price);
   font-family: 'Montserrat';
   --fa-animation-duration: 1.3s;
   --fa-animation-iteration-count: 1;
@@ -137,7 +141,7 @@ h3 {
 }
 
 .error {
-  color: var(--atention-color);
+  color: var(--atention);
   font-size: 1.3rem;
 }
 
@@ -146,7 +150,7 @@ h3 {
 }
 
 .fa-heart {
-  color: var(--atention-color);
+  color: var(--atention);
 }
 
 .footer {
@@ -157,8 +161,8 @@ h3 {
   text-align: center;
   align-items: center;
   height: 40px;
-  background-color: var(--bg2-color);
-  color: var(--fg-color);
+  background-color: var(--fg2);
+  color: var(--bg);
   font-family: 'Montserrat';
 }
 
