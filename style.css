@@ -43,6 +43,8 @@
 .fa-shake {
   font-family: 'Montserrat';
   --fa-animation-duration: 3s;
+  --fa-animation-iteration-count: 1;
+  --fa-animation-delay: 0.5s
 }
 
 .form {
@@ -109,6 +111,13 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  --fa-beat-scale: 1.4;
+  --fa-animation-duration: 1s;
+  --fa-animation-iteration-count: 1;
+  --fa-animation-timing: ease-in-out;
+}
+
 h2,
 h3 {
   color: rgb(74, 105, 230);
@@ -121,6 +130,10 @@ h3 {
 h3 {
   font-weight: 800;
   color: rgb(231, 173, 15);
+  font-family: 'Montserrat';
+  --fa-animation-duration: 1.3s;
+  --fa-animation-iteration-count: 1;
+  --fa-animation-timing: ease-in-out;
 }
 
 .error {

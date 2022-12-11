@@ -63,8 +63,8 @@ const checkAvailId = (value) => value >= 1 && value <= pizzas.length;
 
 const renderPizza = (pizza, input) => {
   formInput.parentElement.style.backgroundColor = 'rgb(28, 69, 21)';
-  messageContainer.innerHTML = `<h2>Pizza ${pizza[0].nombre}</h2>
-      <h3><i class="fas fa-dollar-sign fa-shake"> ${pizza[0].precio}</i></h3>`;
+  messageContainer.innerHTML = `<h2 class="fa-beat">Pizza ${pizza[0].nombre}</h2>
+  <h3 class="fa-beat">$ ${pizza[0].precio}</i></h3>`;
   formInput.setAttribute('placeholder', `${input}`),
   form.reset()
 };
@@ -80,11 +80,11 @@ const renderError = (msg) => {
 const error = (error) => {
   switch (error) {
   case 'notfound':
-    renderError(`<h2>No se encontró el ID, prueba con uno
+    renderError(`<h2>No se encontró el ID, probá con uno
         entre 1 y ${pizzas.length}</h2>`);
     break;
   case 'notNumber':
-    renderError(`<h2>Ingresa un número, please...</h2>`);
+    renderError(`<h2>Ingresá un número, please...</h2>`);
     break;
   };
 };
