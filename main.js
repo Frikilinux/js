@@ -64,7 +64,7 @@ const checkAvailId = (value) => value >= 1 && value <= pizzas.length;
 const renderPizza = (pizza, input) => {
   formInput.parentElement.style.backgroundColor = 'rgb(28, 69, 21)';
   messageContainer.innerHTML = `<h2>Pizza ${pizza[0].nombre}</h2>
-      <h3><i class="fas fa-dollar-sign fa-flip"></i> ${pizza[0].precio}</h3>`;
+      <h3><i class="fas fa-dollar-sign fa-shake"> ${pizza[0].precio}</i></h3>`;
   formInput.setAttribute('placeholder', `${input}`),
   form.reset()
 };
@@ -72,7 +72,7 @@ const renderPizza = (pizza, input) => {
 const renderError = (msg) => {
   messageContainer.innerHTML = msg
   formInput.parentElement.style.backgroundColor = 'rgb(80, 23, 23)';
-  messageContainer.querySelector('h2').style.color = 'red';
+  messageContainer.querySelector('h2').classList.add('error');
   formInput.setAttribute('placeholder', `#ID`)
   form.reset();
 };
