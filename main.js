@@ -84,7 +84,7 @@ const error = (error) => {
         entre 1 y ${pizzas.length}</h2>`);
     break;
   case 'notNumber':
-    renderError(`<h2>Ingresa un número, please</h2>`);
+    renderError(`<h2>Ingresa un número, please...</h2>`);
     break;
   };
 };

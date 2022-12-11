@@ -28,13 +28,14 @@
   align-items: center;
   gap: 50px;
   min-height: calc(100vh - 40px);
+  overflow: hidden;
 }
 
 .fa-magnifying-glass-dollar {
   --fa-animation-duration: 8s;
   position: absolute;
   opacity: 0.5;
-  font-size: 20rem;
+  font-size: 50rem;
   /* z-index: 0; */
   color: var(--bg2-color);
 }
